@@ -1,0 +1,7 @@
+---
+- name: install mysql & pip
+  apt:
+    pkg: 
+    - mariadb-server
+    - python-pip
+    - python3-pip

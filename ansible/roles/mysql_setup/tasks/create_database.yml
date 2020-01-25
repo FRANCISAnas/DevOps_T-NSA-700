@@ -1,0 +1,6 @@
+---
+- name: create database
+  mysql_db:
+    name: db_test
+    state: present
+    login_unix_socket: /run/mysqld/mysqld.sock
