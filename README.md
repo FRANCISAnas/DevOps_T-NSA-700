@@ -39,7 +39,7 @@ To setup the gitlab VM and prepare the other ones with ansible:
         2.3.3 Remove the part of the authorized_kesy file that avoid login as root (every thing until `ssh-rsa`)
             sudo nano cat /root/.ssh/authorized_keys 
 
-        2.3.3 Add permission to login as root using SSH, for this uncomment and change to have `PermitRootLogin yes` and `PasswordAuthentication no` in /etc/ssh/sshd_config (can be find in the Authentication section of the file)
+        2.3.3 Add permission to login as root using SSH, for this uncomment and change to have `PermitRootLogin yes` and `PasswordAuthentication yes` in /etc/ssh/sshd_config (can be find in the Authentication section of the file)
             sudo nano /etc/ssh/sshd_config
 
         2.3.4 Set root password explicitly (password to use: `Jonas1!`)
