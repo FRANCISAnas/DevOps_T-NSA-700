@@ -7,7 +7,7 @@ variable "prefix" {
 }
 
 variable "pubSSHkey" {
-  default = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDcsdMX2DQYDTtDmud+eygYRegKzvXjRVx9B3T35B3jc5QBKZirkj50yFPhk7T/FGL9606L28Ap9/LMDXrs0jmslRo6o1OOxRmGMs3ePeHztxlaWps6RgRwGGK6A7yc9GBpuqq28KOoTw9h+XWLalfMLMhgM77lk4ZuKWWJXYJpQnMDat8WoZO4r/ibgFDTSx2GhufvpcuJnBqQrnG+FGx6FtOk75sYZ50vvGlnC64dGyIJidVEQS+sa3zzlQxpB/N9KQOPb2l5k1RZFDDnGT4nssWurBPqlvJ164cPcryzO06uwUmXFbAqZ+y/4L/Lu4mKlLpmXiVEbS+jqNObJLWp jonas@DESKTOP-9Q3MEAS"
+  default = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDFAWtYI6jTr1pupnJbvYJvAXqqCs2PTxeG+631c8P8YoEBfxeWQZsDSHaaqDao2RJjkATMytsoH+VyTPXAa/mONCuXcfycRawA4YTdHbuPWPLQvpYvqPyF4qn7eB+ya6eJ8Lpuuy8FSJmHSOOXzoWF51rsY10zL4WfA1lZk0fnlwortEdRKp9T4AoHhnErTIlcrGa4vyW56lznkBeyLgtkFqClZMp4/nZChNhCxhz9co5CyQVbbgtZsvhm/VzmxW0L0T4Wb1S6NKRU9rV1fNIJZ3ajMYO+lIcwnVDn8aVOOQh3WPTaIs7yU0j7OOR4fcWbfNtPjbg8ToQoBY2/ak3j jonas.haberkorn@epitech.eu"
 }
 
 variable "private_ip_gitlab" {
@@ -110,7 +110,6 @@ resource "azurerm_virtual_machine" "db" {
     computer_name  = "db"
     admin_username = "jonas"
     admin_password = "Jonas1!"
-    custom_data    = "${file("scripts/createSSH.sh")}"
   }
   os_profile_linux_config {
     disable_password_authentication = false
@@ -176,7 +175,6 @@ resource "azurerm_virtual_machine" "front" {
     computer_name  = "front"
     admin_username = "jonas"
     admin_password = "Jonas1!"
-    custom_data    = "${file("scripts/createSSH.sh")}"
   }
   os_profile_linux_config {
     disable_password_authentication = false
@@ -244,7 +242,6 @@ resource "azurerm_virtual_machine" "back" {
     computer_name  = "back"
     admin_username = "jonas"
     admin_password = "Jonas1!"
-    custom_data    = "${file("scripts/createSSH.sh")}"
   }
   os_profile_linux_config {
     disable_password_authentication = false
