@@ -1,0 +1,7 @@
+---
+- name: install angular
+  shell: npm install -g angular
+- name: install ng
+  shell: npm install -g ng
+- name: install angular/cli
+  shell: npm install -g @angular/cli
