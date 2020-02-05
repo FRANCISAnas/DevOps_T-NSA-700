@@ -78,20 +78,11 @@ To setup the gitlab VM and prepare the other ones with ansible:
         sudo apt-get update --fix-missing
         sudo apt-get install ansible -y
         
-    2.5 Generate SSH keys (default, just press ENTER)
-        ssh-keygen
+    2.5 Clone this repository
         
-    2.6 Setup other VMs for the connection (this section is to reproduce on each other VM)
-        2.6.1 Add `AllowRootLogin yes` to /etc/ssh/sshd_config
-        2.6.2 Explicitely set the root password with `passwd` as root user
-        2.6.3 Reboot the VM with `reboot`
-        
-    2.7 Add the Gitlab ssh public key on all the other VMs as authorized_key
-        ssh-copy-id root@<ENTER_VM_IP_ADDRESS>
-        
-    2.8 Copy the content of the `ansible` directory of this repo into /etc/ansible
+    2.6 Copy the content of the `ansible` directory of this repo into /etc/ansible
     
-    2.9 Setup the VMs
+    2.7 Setup the VMs
         sudo ansible-playbook /etc/ansible/install_and_setup_mysql.yml -c paramiko
     
 ```
