@@ -1,8 +1,8 @@
+[db]
+10.0.2.11 ansible_user=root 
+
 [front]
-192.168.147.129 ansible_user=root 
+10.0.2.12 ansible_user=root 
 
 [back]
-192.168.147.130 ansible_user=root 
-
-[db]
-192.168.147.131 ansible_user=root 
+10.0.2.13 ansible_user=root 
