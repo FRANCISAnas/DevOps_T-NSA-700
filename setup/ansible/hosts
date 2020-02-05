@@ -1,8 +1,8 @@
+[db]
+10.0.2.11 ansible_user=root ansible_ssh_private_key_file=/home/jonas/.ssh/id_rsa
+
 [front]
-192.168.147.129 ansible_user=root ansible_ssh_private_key_file=/home/jonas/.ssh/id_rsa
+10.0.2.12 ansible_user=root ansible_ssh_private_key_file=/home/jonas/.ssh/id_rsa
 
 [back]
-192.168.147.130 ansible_user=root ansible_ssh_private_key_file=/home/jonas/.ssh/id_rsa
-
-[db]
-192.168.147.131 ansible_user=root ansible_ssh_private_key_file=/home/jonas/.ssh/id_rsa
+10.0.2.13 ansible_user=root ansible_ssh_private_key_file=/home/jonas/.ssh/id_rsa
