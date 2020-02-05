@@ -3,6 +3,7 @@ T-NSA
 
 To setup the gitlab VM and prepare the other ones with ansible:
 ```
+
 1. Setup and start the 4 VMs
 
     1.1 Install terraform on your computer
@@ -13,9 +14,12 @@ To setup the gitlab VM and prepare the other ones with ansible:
     
     1.4 Change the subscription ID with yours in the main.tf file (line 34)
     
-    1.5 Apply the script with terraform
+    1.5 Login to Azure using the azure CLI with: az login
     
-    1.6 Once done, your VMs are ready to be used
+    1.6 Apply the script with terraform
+    
+    1.7 Once done, your VMs are ready to be used
+    
 
 2. Prepare the Gitlab VM
 
