@@ -37,6 +37,7 @@ To setup the gitlab VM and prepare the other ones with ansible:
             ssh-keygen -t rsa -N "" -f /home/jonas/.ssh/id.rsa
 
         2.3.3 Add permission to login as root using SSH, for this add `PermitRootLogin yes` to /etc/ssh/sshd_config
+            sudo echo "PermitRootLogin yes" >> sudo /etc/ssh/sshd_config
 
         2.3.4 Set root password explicitly (password to use: `Jonas1!`)
             sudo passwd root 
