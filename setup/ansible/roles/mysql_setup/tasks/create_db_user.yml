@@ -1,0 +1,8 @@
+---
+- name: create db user
+  mysql_user:
+    name=test
+    password=toto
+    host="%"
+    priv='db_test.*:ALL'
+    login_unix_socket=/run/mysqld/mysqld.sock

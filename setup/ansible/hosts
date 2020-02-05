@@ -1,0 +1,8 @@
+[front]
+192.168.147.129 ansible_user=root 
+
+[back]
+192.168.147.130 ansible_user=root 
+
+[db]
+192.168.147.131 ansible_user=root 

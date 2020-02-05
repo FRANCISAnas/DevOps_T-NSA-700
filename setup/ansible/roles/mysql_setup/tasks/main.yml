@@ -1,0 +1,5 @@
+---
+# tasks file for /etc/ansible/roles/mysql_setup
+
+- import_tasks: create_db_user.yml
+- import_tasks: create_database.yml
