@@ -84,7 +84,8 @@ To setup the gitlab VM and prepare the other ones with ansible:
         sudo cp -r t-nsa/setup/ansible /etc
     
     2.7 Setup the VMs
-        sudo ansible-playbook /etc/ansible/install_and_setup_mysql.yml -c paramiko
+        sudo ansible-playbook /etc/ansible/install_and_setup_mysql.yml
+        sudo ansible-playbook /etc/ansible/install_and_setup_angular.yml
     
 ```
 
