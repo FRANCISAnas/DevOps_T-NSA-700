@@ -37,23 +37,23 @@ To setup the gitlab VM and prepare the other ones with ansible:
             ssh-keygen -t rsa -N "" -f /home/jonas/.ssh/id_rsa
             
         2.3.3 Remove the part of the authorized_kesy file that avoid login as root (every thing until `ssh-rsa`)
-            sudo nano cat /root/.ssh/authorized_keys 
+            sudo nano /root/.ssh/authorized_keys 
 
         2.3.3 Add permission to login as root using SSH, for this uncomment and change to have `PermitRootLogin yes` and `PasswordAuthentication yes` in /etc/ssh/sshd_config (can be find in the Authentication section of the file)
             sudo nano /etc/ssh/sshd_config
 
         2.3.4 Set root password explicitly (password to use: `Jonas1!`)
             sudo passwd root 
-            Jonas1! [Press Enter]
-            Jonas1! [Press Enter]
+            Jonas1! [Press Enter]
+            Jonas1! [Press Enter]
 
         2.3.5 Reboot the VM
             sudo reboot
     
     2.4 Push the Gitlab SSH key to the other VMs by running following commands
-        sudo ssh-copy-id -i /home/jonas/.ssh/id_rsa.pub -o StrictHostKeyChecking=no root@10.0.2.11
-        sudo ssh-copy-id -i /home/jonas/.ssh/id_rsa.pub -o StrictHostKeyChecking=no root@10.0.2.12
-        sudo ssh-copy-id -i /home/jonas/.ssh/id_rsa.pub -o StrictHostKeyChecking=no root@10.0.2.13
+        sudo ssh-copy-id -i /home/jonas/.ssh/id_rsa.pub root@10.0.2.11
+        sudo ssh-copy-id -i /home/jonas/.ssh/id_rsa.pub root@10.0.2.12
+        sudo ssh-copy-id -i /home/jonas/.ssh/id_rsa.pub root@10.0.2.13
 
 
 
