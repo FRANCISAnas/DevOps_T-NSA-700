@@ -86,6 +86,13 @@ To setup the gitlab VM and prepare the other ones with ansible:
     2.7 Setup the VMs
         sudo ansible-playbook /etc/ansible/install_and_setup_mysql.yml
         sudo ansible-playbook /etc/ansible/install_and_setup_angular.yml
+        
+
+If you need to restart the gitlab server, run following commands:
+sudo docker container ls -a
+sudo docker container stop <container_id>
+sudo docker container rm <container_id>
+sudo sh ./startGitlab.sh
     
 ```
 
