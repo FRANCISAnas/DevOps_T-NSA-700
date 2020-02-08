@@ -2,8 +2,8 @@
 - name: create db user named tnsa
   mysql_user:
     name: tnsa
-    login_user: tnsa
-    login_password: epitech
+    login_user: root
+    password: epitech
     priv: "*.*:ALL"
 - name: allow remote access to user named tnsa
   mysql_user:
