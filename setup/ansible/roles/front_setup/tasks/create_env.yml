@@ -1,7 +1,7 @@
 ---
 - name: Create project directory and set its permissions
   file:
-    path: "/root/www/back"
+    path: "/root/www/front"
     state: directory
     owner: "{{ ansible_user }}"
     group: "{{ ansible_user }}"
