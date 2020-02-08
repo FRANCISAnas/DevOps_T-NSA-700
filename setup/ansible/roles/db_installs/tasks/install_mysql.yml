@@ -2,7 +2,6 @@
 - name: install mysql & pip
   apt:
     pkg:
-      - mysql
       - mysql-server
       - python-pip
       - python3-pip
