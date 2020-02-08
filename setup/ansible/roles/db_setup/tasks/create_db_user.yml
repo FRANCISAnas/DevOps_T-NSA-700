@@ -1,0 +1,12 @@
+---
+- name: create db user named tnsa
+  mysql_user:
+    name: tnsa
+    login_user: tnsa
+    login_password: epitech
+    priv: "*.*:ALL"
+- name: allow remote access to user named tnsa
+  mysql_user:
+    name: tnsa
+    host_all: yes
+    state: present

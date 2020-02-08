@@ -1,0 +1,5 @@
+---
+- hosts: db
+  roles:
+    - db_installs
+    - db_setup

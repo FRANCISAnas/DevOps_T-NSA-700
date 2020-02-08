@@ -1,5 +1,0 @@
----
-- hosts: db
-  roles:
-  - mysql_install
-  - mysql_setup

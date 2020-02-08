@@ -1,0 +1,7 @@
+---
+- hosts: front
+  roles:
+    - nodejs_install
+    - yarn_install
+    - angular_install
+    - front_setup

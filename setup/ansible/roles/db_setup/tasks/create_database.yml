@@ -1,0 +1,17 @@
+---
+- name: create database
+  mysql_db:
+    name: tnsadb
+    state: present
+    login_unix_socket: /run/mysqld/mysqld.sock
+- name: open port 3306 for remote db access
+  command: sudo ufw allow mysql/tcp
+- name: install rpl
+  apt:
+    name: rpl
+- name: authorize all ips to connect to the db
+  command: sudo rpl "127.0.0.1" "0.0.0.0" /etc/mysql/mariadb.conf.d/50-server.cnf
+- name: restart mysql
+  command: sudo systemctl restart mysql.service
+- name: restart mariadb
+  command: sudo systemctl restart mariadb.service

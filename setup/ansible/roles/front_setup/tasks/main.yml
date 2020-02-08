@@ -1,0 +1,4 @@
+---
+# tasks file for /etc/ansible/roles/front_setup
+
+- import_tasks: create_env.yml

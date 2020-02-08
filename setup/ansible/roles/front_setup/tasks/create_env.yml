@@ -1,0 +1,8 @@
+---
+- name: Create project directory and set its permissions
+  file:
+    path: "/root/www/back"
+    state: directory
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    recurse: yes

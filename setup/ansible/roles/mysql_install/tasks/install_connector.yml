@@ -1,4 +1,0 @@
----
-- name: mysql connector
-  pip:
-    name: pymysql

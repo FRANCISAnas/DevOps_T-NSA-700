@@ -1,5 +1,0 @@
----
-# tasks file for /etc/ansible/roles/mysql_install
-
-- import_tasks: install_mysql.yml
-- import_tasks: install_connector.yml
