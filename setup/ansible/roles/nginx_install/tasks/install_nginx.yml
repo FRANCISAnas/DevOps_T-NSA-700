@@ -9,7 +9,7 @@
     state: started
 - name: copy the nginx config
   copy:
-    src: ../config/back_nginx.cfg
-    dest: /etc/nginx/sites-available/webapp.cfg
+    src: /etc/ansible/roles/nginx_install/files/back.cfg
+    dest: /etc/nginx/sites-available/back.cfg
 - name: restart nginx
   service: name=nginx state=restarted enabled=yes
