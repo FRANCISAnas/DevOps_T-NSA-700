@@ -95,4 +95,7 @@ sudo docker container stop <container_id>
 sudo docker container rm <container_id>
 sudo sh ./startGitlab.sh
 
+
+To test if the mysql server is listening, run following command on db VM:
+sudo netstat -tulnp | grep mysql
 ```
