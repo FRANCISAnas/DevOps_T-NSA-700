@@ -1,16 +1,20 @@
 ---
+- name: Set mysql port to 3306
+  mysql_port: "3306"
+- name: Set mysql bind address to 0.0.0.0
+  mysql_bind_address: "0.0.0.0"
+- name: Enabling mysql at startup
+  mysql_enabled_on_startup: true
+- name: setting default root password
+  mysql_root_password: root
 - name: create database
   mysql_db:
+    login_user: root
+    login_passport: root
     name: tnsadb
     state: present
-    login_unix_socket: /run/mysqld/mysqld.sock
 - name: open port 3306 for remote db access
   command: sudo ufw allow mysql/tcp
-- name: install rpl
-  apt:
-    name: rpl
-- name: authorize all ips to connect to the db
-  command: sudo rpl "127.0.0.1" "0.0.0.0" /etc/mysql/mariadb.conf.d/50-server.cnf
 - name: restart mysql
   command: sudo systemctl restart mysql.service
 - name: restart mariadb
