@@ -2,11 +2,12 @@
 - name: create db user named tnsa
   mysql_user:
     name: tnsa
-    login_user: root
     password: epitech
     priv: "*.*:ALL"
+    login_unix_socket: /run/mysqld/mysqld.sock
 - name: allow remote access to user named tnsa
   mysql_user:
     name: tnsa
     host_all: yes
+    login_unix_socket: /run/mysqld/mysqld.sock
     state: present

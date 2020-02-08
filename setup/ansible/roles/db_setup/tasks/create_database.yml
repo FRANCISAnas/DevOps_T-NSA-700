@@ -2,6 +2,7 @@
 - name: create database
   mysql_db:
     name: tnsadb
+    login_unix_socket: /run/mysqld/mysqld.sock
     state: present
 - name: enable ufw
   command: sudo ufw enable
