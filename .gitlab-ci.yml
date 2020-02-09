@@ -14,7 +14,7 @@ front build:
   script:
     - cd frontend
     - npm install --quiet
-    - npm run build-prod
+    - npm run build
   artifacts:
     paths:
       - frontent/dist/

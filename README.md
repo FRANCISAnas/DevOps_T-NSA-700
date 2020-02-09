@@ -73,7 +73,7 @@ To setup the gitlab VM and prepare the other ones with ansible:
         sudo chmod +x ./startGitlab.sh
         sudo sh startGitlab.sh
 
-    2.4 Create script that starts gitlab runner
+    /*2.4 Create script that starts gitlab runner
         nano ~/startGitlabRunner.sh
 
         With the following content:
@@ -81,7 +81,12 @@ To setup the gitlab VM and prepare the other ones with ansible:
 
     2.5 Start Gitlab runner
         sudo chmod +x ./startGitlabRunner.sh
-        sudo sh startGitlabRunner.sh
+        sudo sh startGitlabRunner.sh*/
+
+    2.4 Install gitlab runner locally
+        curl -LJO https://gitlab-runner-downloads.s3.amazonaws.com/latest/deb/gitlab-runner_amd64.deb
+        sudo dpkg -i gitlab-runner_amd64.deb
+        gitlab-runner register --name t-nsa-runner --url http://192.168.1.29 --registration-token wKYPkMDgwvnTWHhu1Mgz --tag-list ci --executor shell --non-interactive
 
     2.6 Install ansible
         sudo apt-add-repository ppa:ansible/ansible
