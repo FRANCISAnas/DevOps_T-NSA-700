@@ -67,7 +67,7 @@ To setup the gitlab VM and prepare the other ones with ansible:
         nano ~/startGitlab.sh
 
         With the following content:
-        docker run --detach --hostname gitlab.example.com --publish 443:443 --publish 80:80 --name gitlab --restart always --volume /srv/gitlab/config:/etc/gitlab --volume /srv/gitlab/logs:/var/log/gitlab --volume /srv/gitlab/data:/var/opt/gitlab gitlab/gitlab-ce:latest
+        docker run --detach --hostname localhost --publish 443:443 --publish 80:80 --name gitlab --restart always --volume /srv/gitlab/config:/etc/gitlab --volume /srv/gitlab/logs:/var/log/gitlab --volume /srv/gitlab/data:/var/opt/gitlab gitlab/gitlab-ce:latest
 
     2.3 Start Gitlab server
         sudo chmod +x ./startGitlab.sh
