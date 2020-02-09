@@ -98,8 +98,12 @@ To setup the gitlab VM and prepare the other ones with ansible:
         sudo ansible-playbook /etc/ansible/install_and_setup_front.yml
         sudo ansible-playbook /etc/ansible/install_and_setup_back.yml
 
-    3.0 Connect to gitlab, create your project and register the gitlan-runner in the project settings > CI/CD
+    2.10 Connect to gitlab, create your project and register the gitlan-runner in the project settings > CI/CD
         sudo docker exec gitlab-runner gitlab-runner register --name t-nsa-runner --url http://192.168.1.29 --registration-token wKYPkMDgwvnTWHhu1Mgz --tag-list ci --executor shell --non-interactive
+
+    2.11 For development only, disable the firewall blocking the runner to access the repo:
+        sudo ufw disable
+
 
 
 
