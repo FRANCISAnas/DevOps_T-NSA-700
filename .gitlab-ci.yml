@@ -1,0 +1,77 @@
+stages:
+  - build
+  - test
+#  - deploy
+
+front build:
+  image: node:latest
+  stage: build
+  cache:
+    paths:
+      - frontend/node_modules/
+  script:
+    - cd frontend
+    - npm install --quiet
+    - npm run build-prod
+  artifacts:
+    paths:
+      - frontent/dist/
+
+front test:
+  image: node:latest
+  stage: test
+  cache:
+    policy: pull
+    paths:
+      - frontend/node_modules/
+  script:
+    - npm run test
+# Back
+#back build:
+#  image: hitalos/laravel:latest
+#  stage: build
+#  variables:
+#    NODE_ENV: development
+#  before_script:
+#    - cd back
+#    - npm install
+#    - composer install --no-dev
+#  script:
+#    - npm build
+
+#back tests:
+#  image: hitalos/laravel:latest
+#  stage: test
+#  variables:
+#    NODE_ENV: development
+#  before_script:
+#    - cd back
+#    - npm install
+#    - composer install --no-dev
+#  script:
+#    - phpunit --configuration phpunit.xml
+
+# Front
+#front build:
+#  image: node:latest
+#  stage: build
+#  before_script:
+#    - cd front
+#    - npm install
+#    - npm install --save-dev
+#  script:
+#    - npm run build
+
+#frontend tests:
+#  image: weboaks/node-karma-protractor-chrome
+#  stage: test
+#  before_script:
+#    - cd front
+#    - npm install
+#    - npm install --save-dev
+#    - npm install -g npx
+#    - npx webdriver-manager clean
+#    - npx webdriver-manager update
+#  script:
+#    - npm test
+#    - npm run e2e
