@@ -4,7 +4,8 @@ stages:
 #  - deploy
 
 front build:
-  tags: ci
+  tags:
+    - ci
   image: node:latest
   stage: build
   cache:
@@ -19,7 +20,8 @@ front build:
       - frontent/dist/
 
 front test:
-  tags: ci
+  tags:
+    - ci
   image: node:latest
   stage: test
   cache:
