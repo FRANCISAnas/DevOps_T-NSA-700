@@ -8,7 +8,7 @@ sudo apt-get install docker.io
 touch startGitlab.sh
 
 ## File content
-echo "docker run --detach --hostname gitlab.example.com --publish 443:443 --publish 80:80 --name gitlab --restart always --volume /srv/gitlab/config:/etc/gitlab --volume /srv/gitlab/logs:/var/log/gitlab --volume /srv/gitlab/data:/var/opt/gitlab gitlab/gitlab-ce:latest" > startGitlab.sh
+echo "docker run --detach --hostname loclahost --publish 443:443 --publish 80:80 --name gitlab --restart always --volume /srv/gitlab/config:/etc/gitlab --volume /srv/gitlab/logs:/var/log/gitlab --volume /srv/gitlab/data:/var/opt/gitlab gitlab/gitlab-ce:latest" > startGitlab.sh
 ##
 
 # Starting GitLab server
