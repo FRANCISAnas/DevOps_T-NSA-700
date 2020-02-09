@@ -77,7 +77,7 @@ To setup the gitlab VM and prepare the other ones with ansible:
         nano ~/startGitlabRunner.sh
 
         With the following content:
-        docker run -d --name gitlab-runner --restart always -v /srv/gitlab-runner/config:/etc/gitlab-runner -v /var/run/docker.sock:/var/run/docker.sock gitlab gitlab-runner:latest
+        docker run -d --name gitlab-runner --restart always -v /srv/gitlab-runner/config:/etc/gitlab-runner -v /var/run/docker.sock:/var/run/docker.sock gitlab/gitlab-runner:latest
 
     2.5 Start Gitlab runner
         sudo chmod +x ./startGitlabRunner.sh
@@ -98,12 +98,14 @@ To setup the gitlab VM and prepare the other ones with ansible:
         sudo ansible-playbook /etc/ansible/install_and_setup_front.yml
         sudo ansible-playbook /etc/ansible/install_and_setup_back.yml
 
+    3.0 Connect to gitlab, create your project and register the gitlan-runner in the project settings > CI/CD
+        sudo docker exec gitlab-runner gitlab-runner register --name t-nsa-runner --url http://192.168.1.29 --registration-token wKYPkMDgwvnTWHhu1Mgz --tag-list ci --executor shell --non-interactive
+
+
 
 If you need to restart the gitlab server, run following commands:
-sudo docker container ls -a
-sudo docker container stop <container_id>
-sudo docker container rm <container_id>
-sudo sh ./startGitlab.sh
+sudo docker restart gitlab
+sudo docker restart gitlab-runner
 
 
 To test if the mysql server is listening, run following command on db VM:
