@@ -73,15 +73,6 @@ To setup the gitlab VM and prepare the other ones with ansible:
         sudo chmod +x ./startGitlab.sh
         sudo sh startGitlab.sh
 
-    /*2.4 Create script that starts gitlab runner
-        nano ~/startGitlabRunner.sh
-
-        With the following content:
-        docker run -d --name gitlab-runner --restart always -v /srv/gitlab-runner/config:/etc/gitlab-runner -v /var/run/docker.sock:/var/run/docker.sock gitlab/gitlab-runner:latest
-
-    2.5 Start Gitlab runner
-        sudo chmod +x ./startGitlabRunner.sh
-        sudo sh startGitlabRunner.sh*/
 
     2.4 Install gitlab runner locally
         curl -LJO https://gitlab-runner-downloads.s3.amazonaws.com/latest/deb/gitlab-runner_amd64.deb
@@ -108,6 +99,12 @@ To setup the gitlab VM and prepare the other ones with ansible:
 
     2.11 For development only, disable the firewall blocking the runner to access the repo:
         sudo ufw disable
+
+    2.12 Install nodejs
+        sudo curl -sL https://deb.nodesource.com/setup_13.x | sudo bash -
+        sudp apt-get install -y nodejs
+
+    2.13 Install angular
 
 
 
