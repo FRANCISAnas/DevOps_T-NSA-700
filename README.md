@@ -73,17 +73,27 @@ To setup the gitlab VM and prepare the other ones with ansible:
         sudo chmod +x ./startGitlab.sh
         sudo sh startGitlab.sh
 
-    2.4 Install ansible
+    2.4 Create script that starts gitlab runner
+        nano ~/startGitlabRunner.sh
+
+        With the following content:
+        docker run -d --name gitlab-runner --restart always -v /srv/gitlab-runner/config:/etc/gitlab-runner -v /var/run/docker.sock:/var/run/docker.sock gitlab gitlab-runner:latest
+
+    2.5 Start Gitlab runner
+        sudo chmod +x ./startGitlabRunner.sh
+        sudo sh startGitlabRunner.sh
+
+    2.6 Install ansible
         sudo apt-add-repository ppa:ansible/ansible
         sudo apt-get update --fix-missing
         sudo apt-get install ansible -y
 
-    2.5 Clone this repository
+    2.7 Clone this repository
 
-    2.6 Copy the content of the `setup/ansible` directory of this repo into /etc
+    2.8 Copy the content of the `setup/ansible` directory of this repo into /etc
         sudo cp -r t-nsa/setup/ansible /etc
 
-    2.7 Setup the VMs
+    2.9 Setup the VMs
         sudo ansible-playbook /etc/ansible/install_and_setup_db.yml
         sudo ansible-playbook /etc/ansible/install_and_setup_front.yml
         sudo ansible-playbook /etc/ansible/install_and_setup_back.yml
