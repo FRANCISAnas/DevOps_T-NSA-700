@@ -86,7 +86,7 @@ To setup the gitlab VM and prepare the other ones with ansible:
     2.4 Install gitlab runner locally
         curl -LJO https://gitlab-runner-downloads.s3.amazonaws.com/latest/deb/gitlab-runner_amd64.deb
         sudo dpkg -i gitlab-runner_amd64.deb
-        gitlab-runner register --name t-nsa-runner --url http://192.168.1.29 --registration-token wKYPkMDgwvnTWHhu1Mgz --tag-list ci --executor shell --non-interactive
+        gitlab-runner register --name t-nsa-runner --url http://192.168.1.29 --registration-token z4GiP_5K6aBG-XhHp92H --tag-list ci --executor shell --non-interactive
 
     2.6 Install ansible
         sudo apt-add-repository ppa:ansible/ansible
