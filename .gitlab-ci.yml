@@ -36,6 +36,8 @@ front test:
 
 # Back
 back build:
+  tags:
+    - ci
   image: hitalos/laravel:latest
   stage: build
   variables:
@@ -48,6 +50,8 @@ back build:
     - npm build
 
 back tests:
+  tags:
+    - ci
   image: hitalos/laravel:latest
   stage: test
   variables:
