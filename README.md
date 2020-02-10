@@ -100,20 +100,22 @@ To setup the gitlab VM and prepare the other ones with ansible:
     2.11 For development only, disable the firewall blocking the runner to access the repo:
         sudo ufw disable
 
-    2.12 Install nodejs
+3. Prepare environament for pipeline build and tests
+
+    3.1 Install nodejs
         sudo curl -sL https://deb.nodesource.com/setup_13.x | sudo bash -
         sudp apt-get install -y nodejs
 
-    2.13 Configure npm proxy
+    3.2 Configure npm proxy
         npm config set proxy null
         npm config set https-proxy null
         npm config set registry http://registry.npmjs.org/
 
 
-    2.14 Install angular
+    3.3 Install angular
         sudo npm install -g @angular/cli
 
-    2.15 Install chrome headless browser for front unit tests
+    3.4 Install chrome headless browser for front unit tests
         export CHROME_BIN=/usr/bin/google-chrome
         export DISPLAY=:99.0
         sudo apt-get update
@@ -122,6 +124,20 @@ To setup the gitlab VM and prepare the other ones with ansible:
         wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
         sudo dpkg -i google-chrome*.deb
 
+    3.5 Install yarn
+        curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+        echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+        sudo apt update && sudo apt install yarn
+
+    3.6 Install composer
+        sudo apt install wget php-cli php-zip unzip
+        php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+        sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+
+    3.7 Install phpunit
+        wget https://phar.phpunit.de/phpunit-6.5.phar
+        chmod +x phpunit-6.5.phar
+        sudo mv phpunit-6.5.phar /usr/local/bin/phpunit
 
 
 

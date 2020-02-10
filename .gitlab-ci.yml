@@ -38,7 +38,6 @@ front test:
 back build:
   tags:
     - ci
-  image: hitalos/laravel:latest
   stage: build
   variables:
     NODE_ENV: development
@@ -52,7 +51,6 @@ back build:
 back tests:
   tags:
     - ci
-  image: hitalos/laravel:latest
   stage: test
   variables:
     NODE_ENV: development
