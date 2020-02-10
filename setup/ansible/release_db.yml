@@ -9,7 +9,7 @@
         path: "/var/www/back"
     - name: recreating destination folder
       file:
-        state: present
+        state: directory
         path: "/var/www/back"
     - name: Copy back directory which is containing the db migrations
       copy: src=/home/gitlab-runner/builds/XJGkXp2X/0/root/t-nsa/backend dest=/var/www/back
