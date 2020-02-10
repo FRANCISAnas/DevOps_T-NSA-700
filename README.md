@@ -125,9 +125,15 @@ To setup the gitlab VM and prepare the other ones with ansible:
         sudo dpkg -i google-chrome*.deb
 
     3.5 Install yarn
+        sudo apt remove cmdtest
+        sudo apt remove yarn
         curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
         echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-        sudo apt update && sudo apt install yarn
+        sudo apt-get update
+        sudo apt-get install yarn
+
+    3.6 Install PHP
+        sudo apt-get install openssl php-common php-curl php-json php-mbstring php-mysql php-xml php-zip # php7.3-common php7.3-fpm php7.3-bcmath php7.3-json php7.3-mbstring
 
     3.6 Install composer
         sudo apt install wget php-cli php-zip unzip
@@ -135,9 +141,7 @@ To setup the gitlab VM and prepare the other ones with ansible:
         sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 
     3.7 Install phpunit
-        wget https://phar.phpunit.de/phpunit-6.5.phar
-        chmod +x phpunit-6.5.phar
-        sudo mv phpunit-6.5.phar /usr/local/bin/phpunit
+        sudo apt install phpunit
 
 
 

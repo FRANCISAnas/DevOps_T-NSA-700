@@ -44,7 +44,7 @@ back build:
   before_script:
     - cd backend
     - yarn install
-    - composer install --no-dev
+    - composer install
   script:
     - npm build
 
@@ -57,9 +57,9 @@ back tests:
   before_script:
     - cd backend
     - yarn install
-    - composer install --no-dev
+    - composer install
   script:
-    - phpunit --configuration phpunit.xml
+    - vendor/bin/phpunit ./tests/Unit
 # Front
 #front build:
 #  image: node:latest
