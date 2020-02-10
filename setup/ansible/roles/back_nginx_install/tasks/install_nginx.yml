@@ -7,9 +7,16 @@
   service:
     name: nginx
     state: started
-- name: copy the nginx config
+- name: copy the nginx config file
   copy:
     src: /etc/ansible/roles/back_nginx_install/files/back.cfg
     dest: /etc/nginx/sites-available/back.cfg
+    become: yes
+- name: create symlink to config
+  file:
+    src: /etc/nginx/sites-available/back.cfg
+    dest: /etc/nginx/sites-enabled/default
+    state: link
+    become: yes
 - name: restart nginx
   service: name=nginx state=restarted enabled=yes
