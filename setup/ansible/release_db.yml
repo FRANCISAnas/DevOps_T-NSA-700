@@ -16,4 +16,4 @@
     - name: run db migration
       shell: php artisan migrate --force
       args:
-        chdir: /var/www/back/backend/
+        chdir: /var/www/back/
