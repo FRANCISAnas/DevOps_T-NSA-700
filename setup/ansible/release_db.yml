@@ -1,18 +1,19 @@
 ---
 - hosts: back
-- name: checking mysql server is running
-  service: name=mysql-server state=started enabled=no
-- name: deleting destination folder
-  file:
-    state: absent
-    path: "/var/www/back"
-- name: recreating destination folder
-  file:
-    state: present
-    path: "/var/www/back"
-- name: Copy back directory which is containing the db migrations
-  copy: src=/home/gitlab-runner/builds/XJGkXp2X/0/root/t-nsa/backend dest=/var/www/back
-- name: run db migration
-  shell: php artisan migrate --force
-  args:
-    chdir: /var/www/back
+  tasks:
+    - name: checking mysql server is running
+    service: name=mysql-server state=started enabled=no
+    - name: deleting destination folder
+    file:
+        state: absent
+        path: "/var/www/back"
+    - name: recreating destination folder
+    file:
+        state: present
+        path: "/var/www/back"
+    - name: Copy back directory which is containing the db migrations
+    copy: src=/home/gitlab-runner/builds/XJGkXp2X/0/root/t-nsa/backend dest=/var/www/back
+    - name: run db migration
+    shell: php artisan migrate --force
+    args:
+        chdir: /var/www/back

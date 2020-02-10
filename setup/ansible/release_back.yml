@@ -1,16 +1,17 @@
 ---
 - hosts: back
-- name: stop nginx server
-  service: name=nginx state=stopped enabled=no
-- name: deleting destination folder
-  file:
-    state: absent
-    path: "/var/www/back"
-- name: recreating destination folder
-  file:
-    state: present
-    path: "/var/www/back"
-- name: Copy back build directory
-  copy: src=/home/gitlab-runner/builds/XJGkXp2X/0/root/t-nsa/backend dest=/var/www/back
-- name: restart nginx server
-  service: name=nginx state=restarted enabled=yes
+  tasks:
+    - name: stop nginx server
+    service: name=nginx state=stopped enabled=no
+    - name: deleting destination folder
+    file:
+        state: absent
+        path: "/var/www/back"
+    - name: recreating destination folder
+    file:
+        state: present
+        path: "/var/www/back"
+    - name: Copy back build directory
+    copy: src=/home/gitlab-runner/builds/XJGkXp2X/0/root/t-nsa/backend dest=/var/www/back
+    - name: restart nginx server
+    service: name=nginx state=restarted enabled=yes
