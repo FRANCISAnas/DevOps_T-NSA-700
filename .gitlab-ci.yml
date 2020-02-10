@@ -33,31 +33,31 @@ front test:
   script:
     - cd frontend
     - npm run test
+
 # Back
-#back build:
-#  image: hitalos/laravel:latest
-#  stage: build
-#  variables:
-#    NODE_ENV: development
-#  before_script:
-#    - cd back
-#    - npm install
-#    - composer install --no-dev
-#  script:
-#    - npm build
+back build:
+  image: hitalos/laravel:latest
+  stage: build
+  variables:
+    NODE_ENV: development
+  before_script:
+    - cd backend
+    - yarn install
+    - composer install --no-dev
+  script:
+    - npm build
 
-#back tests:
-#  image: hitalos/laravel:latest
-#  stage: test
-#  variables:
-#    NODE_ENV: development
-#  before_script:
-#    - cd back
-#    - npm install
-#    - composer install --no-dev
-#  script:
-#    - phpunit --configuration phpunit.xml
-
+back tests:
+  image: hitalos/laravel:latest
+  stage: test
+  variables:
+    NODE_ENV: development
+  before_script:
+    - cd backend
+    - yarn install
+    - composer install --no-dev
+  script:
+    - phpunit --configuration phpunit.xml
 # Front
 #front build:
 #  image: node:latest
