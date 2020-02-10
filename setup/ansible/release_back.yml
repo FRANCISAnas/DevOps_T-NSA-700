@@ -11,7 +11,17 @@
       file:
         state: directory
         path: "/var/www/back"
+    - name: Create a zip archive of /path/to/foo
+      archive:
+        path: /home/gitlab-runner/builds/XJGkXp2X/0/root/t-nsa/backend
+        dest: /home/gitlab-runner/builds/XJGkXp2X/0/root/t-nsa/backend.zip
+        format: zip
     - name: Copy back build directory
-      copy: src=/home/gitlab-runner/builds/XJGkXp2X/0/root/t-nsa/backend dest=/var/www/back
+      copy: src=/home/gitlab-runner/builds/XJGkXp2X/0/root/t-nsa/backend.zip dest=/var/www/back
+    - name: Unarchive a file that needs to be downloaded (added in 2.0)
+      unarchive:
+        src: /var/www/back/backend.zip
+        dest: /var/www/back/backend
+        remote_src: yes
     - name: restart nginx server
       service: name=nginx state=restarted enabled=yes
