@@ -12,6 +12,10 @@
         state: directory
         path: "/var/www/front"
     - name: Copy front build directory
-      copy: src=/home/gitlab-runner/builds/XJGkXp2X/0/root/t-nsa/frontend dest=/var/www/front
+      copy: src=/home/gitlab-runner/builds/XJGkXp2X/0/root/t-nsa/frontend/dist/front dest=/var/www/front
+    - name: Copy front build directory
+      copy: src=/home/gitlab-runner/builds/XJGkXp2X/0/root/t-nsa/frontend/dist/front dest=/var/www/front
+    - name: Move files one level higher
+      shell: mv /var/www/front/* /var/www
     - name: restart nginx server
       service: name=nginx state=restarted enabled=yes
