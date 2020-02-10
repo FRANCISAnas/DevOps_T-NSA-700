@@ -2,7 +2,7 @@
 - hosts: back
   tasks:
     - name: checking mysql server is running
-      service: name=mysql-server state=started enabled=no
+      service: name=mysql state=started enabled=no
     - name: deleting destination folder
       file:
         state: absent
