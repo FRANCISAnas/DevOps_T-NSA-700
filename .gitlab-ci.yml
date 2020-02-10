@@ -45,7 +45,7 @@ front release:
       - frontend/node_modules/
       - frontend/dist/
   script:
-    - ansible-playbook /etc/ansible/release_front.yml
+    - sudo ansible-playbook /etc/ansible/release_front.yml
 
 # Back
 back build:
@@ -83,7 +83,7 @@ back release:
     - yarn install
     - composer install
   script:
-    - ansible-playbook /etc/ansible/release_back.yml
+    - sudo ansible-playbook /etc/ansible/release_back.yml
 
 # DB
 db release:
@@ -91,4 +91,4 @@ db release:
     - ci
   stage: deploy
   script:
-    - ansible-playbook /etc/ansible/release_db.yml
+    - sudo ansible-playbook /etc/ansible/release_db.yml

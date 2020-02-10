@@ -79,10 +79,19 @@ To setup the gitlab VM and prepare the other ones with ansible:
         sudo dpkg -i gitlab-runner_amd64.deb
         gitlab-runner register --name t-nsa-runner --url http://192.168.1.29 --registration-token z4GiP_5K6aBG-XhHp92H --tag-list ci --executor shell --non-interactive
 
+    2.5 Push the Gitlab-Runner SSH key to the other VMs by running following commands
+        ssh-keygen -t rsa -N "" -f /home/gitlab-runner/.ssh/id_rsa
+        sudo ssh-copy-id -i /home/gitlab-runner/.ssh/id_rsa.pub root@10.0.2.11
+        sudo ssh-copy-id -i /home/gitlab-runner/.ssh/id_rsa.pub root@10.0.2.12
+        sudo ssh-copy-id -i /home/gitlab-runner/.ssh/id_rsa.pub root@10.0.2.13
+
     2.6 Install ansible
         sudo apt-add-repository ppa:ansible/ansible
         sudo apt-get update --fix-missing
         sudo apt-get install ansible -y
+
+    2.7 Allow gitlab-runner to run ansible-playbook by adding following to /etc/sudoers
+        gitlab-runner ALL=NOIPASSWD:/usr/bin/ansible-playbook
 
     2.7 Clone this repository
 
