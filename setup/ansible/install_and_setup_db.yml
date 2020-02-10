@@ -2,7 +2,6 @@
 - hosts: db
   roles:
     - php_and_extensions_install
-    - nginx_install
     - composer_install
     - nodejs_install
     - yarn_install
