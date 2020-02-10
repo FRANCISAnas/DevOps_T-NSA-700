@@ -15,6 +15,6 @@
         group: "{{ ansible_user }}"
         recurse: yes
     - name: Copy front build directory
-      copy: src=/home/gitlab-runner/builds/XJGkXp2X/0/root/t-nsa/frontend/dist/front dest=/var/www/html
+      copy: src=/home/gitlab-runner/builds/XJGkXp2X/0/root/t-nsa/frontend/dist/front/* dest=/var/www/html
     - name: restart nginx server
       service: name=nginx state=restarted enabled=yes
