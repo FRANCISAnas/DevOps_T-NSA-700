@@ -104,14 +104,31 @@ To setup the gitlab VM and prepare the other ones with ansible:
         sudo curl -sL https://deb.nodesource.com/setup_13.x | sudo bash -
         sudp apt-get install -y nodejs
 
-    2.13 Install angular
+    2.13 Configure npm proxy
+        npm config set proxy null
+        npm config set https-proxy null
+        npm config set registry http://registry.npmjs.org/
+
+
+    2.14 Install angular
+        sudo npm install -g @angular/cli
+
+    2.15 Install chrome headless browser for front unit tests
+        export CHROME_BIN=/usr/bin/google-chrome
+        export DISPLAY=:99.0
+        sudo apt-get update
+        sudo apt --fix-broken install
+        sudo apt-get install -y libappindicator1 fonts-liberation libasound2 libgconf-2-4 libnspr4 libxss1 libnss3 xdg-utils
+        wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+        sudo dpkg -i google-chrome*.deb
+
 
 
 
 
 If you need to restart the gitlab server, run following commands:
 sudo docker restart gitlab
-sudo docker restart gitlab-runner
+sudo gitlab-runner restart
 
 
 To test if the mysql server is listening, run following command on db VM:

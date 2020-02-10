@@ -13,7 +13,7 @@ front build:
       - frontend/node_modules/
   script:
     - cd frontend
-    - npm install
+    - npm install --allow-root --unsafe-perm
     - npm run build
   artifacts:
     paths:
