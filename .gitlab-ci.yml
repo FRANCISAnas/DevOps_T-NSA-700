@@ -38,7 +38,7 @@ front release:
   tags:
     - ci
   image: node:latest
-  stage: release
+  stage: deploy
   cache:
     policy: pull
     paths:
@@ -77,7 +77,7 @@ back tests:
 back release:
   tags:
     - ci
-  stage: release
+  stage: deploy
   before_script:
     - cd backend
     - yarn install
@@ -89,6 +89,6 @@ back release:
 db release:
   tags:
     - ci
-  stage: release
+  stage: deploy
   script:
     - ansible-playbook /etc/ansible/release_db.yml
