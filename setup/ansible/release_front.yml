@@ -6,14 +6,15 @@
     - name: deleting destination folder
       file:
         state: absent
-        path: "/var/www/front"
+        path: "/var/www/html"
     - name: recreating destination folder
       file:
         state: directory
-        path: "/var/www/front"
+        path: "/var/www/html"
+        owner: "{{ ansible_user }}"
+        group: "{{ ansible_user }}"
+        recurse: yes
     - name: Copy front build directory
-      copy: src=/home/gitlab-runner/builds/XJGkXp2X/0/root/t-nsa/frontend/dist/front dest=/var/www
-    - name: Move files one level higher
-      shell: mv /var/www/front/* /var/www
+      copy: src=/home/gitlab-runner/builds/XJGkXp2X/0/root/t-nsa/frontend/dist/front dest=/var/www/html
     - name: restart nginx server
       service: name=nginx state=restarted enabled=yes
