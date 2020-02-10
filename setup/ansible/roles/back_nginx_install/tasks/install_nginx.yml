@@ -1,0 +1,15 @@
+---
+- name: install nginx
+  apt:
+    name: nginx
+    state: latest
+- name: start nginx
+  service:
+    name: nginx
+    state: started
+- name: copy the nginx config
+  copy:
+    src: /etc/ansible/roles/back_nginx_install/files/back.cfg
+    dest: /etc/nginx/sites-available/back.cfg
+- name: restart nginx
+  service: name=nginx state=restarted enabled=yes

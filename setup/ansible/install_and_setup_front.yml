@@ -1,6 +1,7 @@
 ---
 - hosts: front
   roles:
+    - front_nginx_install
     - nodejs_install
     - yarn_install
     - angular_install

@@ -1,4 +1,0 @@
----
-# tasks file for /etc/ansible/roles/nginx_install
-
-- import_tasks: install_nginx.yml

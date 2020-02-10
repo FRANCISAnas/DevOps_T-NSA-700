@@ -9,9 +9,5 @@
     name: rpl
 - name: authorize all ips to connect to the db
   command: sudo rpl "127.0.0.1" "0.0.0.0" /etc/mysql/mysql.conf.d/mysqld.cnf
-#- name: enable ufw
-#  command: sudo ufw enable
-#- name: open port 3306 for remote db access
-#  command: sudo ufw allow mysql
 - name: restart mysql
   command: sudo systemctl restart mysql

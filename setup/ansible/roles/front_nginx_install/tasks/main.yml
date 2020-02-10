@@ -1,0 +1,4 @@
+---
+# tasks file for /etc/ansible/roles/front_nginx_install
+
+- import_tasks: install_nginx.yml

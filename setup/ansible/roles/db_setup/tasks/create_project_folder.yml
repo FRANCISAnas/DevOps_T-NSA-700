@@ -1,0 +1,5 @@
+---
+- name: create backend folder which will contain the db migrations
+  file:
+    state: present
+    path: "/var/www/back"

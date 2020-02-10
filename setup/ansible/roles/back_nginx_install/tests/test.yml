@@ -2,4 +2,4 @@
 - hosts: localhost
   remote_user: root
   roles:
-    - /etc/ansible/roles/nginx_install
+    - /etc/ansible/roles/back_nginx_install
