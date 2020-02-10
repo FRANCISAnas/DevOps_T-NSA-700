@@ -1,5 +1,5 @@
 ---
-- hosts: back
+- hosts: db
   tasks:
     - name: checking mysql server is running
       service: name=mysql state=started enabled=no
