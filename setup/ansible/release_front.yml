@@ -2,16 +2,16 @@
 - hosts: front
   tasks:
     - name: stop nginx server
-    service: name=nginx state=stopped enabled=no
+      service: name=nginx state=stopped enabled=no
     - name: deleting destination folder
-    file:
+      file:
         state: absent
         path: "/var/www/front"
     - name: recreating destination folder
-    file:
+      file:
         state: present
         path: "/var/www/front"
     - name: Copy front build directory
-    copy: src=/home/gitlab-runner/builds/XJGkXp2X/0/root/t-nsa/frontend dest=/var/www/front
+      copy: src=/home/gitlab-runner/builds/XJGkXp2X/0/root/t-nsa/frontend dest=/var/www/front
     - name: restart nginx server
-    service: name=nginx state=restarted enabled=yes
+      service: name=nginx state=restarted enabled=yes
