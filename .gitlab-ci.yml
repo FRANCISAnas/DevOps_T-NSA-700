@@ -1,7 +1,7 @@
 stages:
   - build
   - test
-#  - deploy
+  - deploy
 
 front build:
   tags:
@@ -34,6 +34,19 @@ front test:
     - cd frontend
     - npm run test
 
+front release:
+  tags:
+    - ci
+  image: node:latest
+  stage: release
+  cache:
+    policy: pull
+    paths:
+      - frontend/node_modules/
+      - frontend/dist/
+  script:
+    - ansible-playbook /etc/ansible/release_front.yml
+
 # Back
 back build:
   tags:
@@ -60,27 +73,22 @@ back tests:
     - composer install
   script:
     - vendor/bin/phpunit ./tests/Unit
-# Front
-#front build:
-#  image: node:latest
-#  stage: build
-#  before_script:
-#    - cd front
-#    - npm install
-#    - npm install --save-dev
-#  script:
-#    - npm run build
 
-#frontend tests:
-#  image: weboaks/node-karma-protractor-chrome
-#  stage: test
-#  before_script:
-#    - cd front
-#    - npm install
-#    - npm install --save-dev
-#    - npm install -g npx
-#    - npx webdriver-manager clean
-#    - npx webdriver-manager update
-#  script:
-#    - npm test
-#    - npm run e2e
+back release:
+  tags:
+    - ci
+  stage: release
+  before_script:
+    - cd backend
+    - yarn install
+    - composer install
+  script:
+    - ansible-playbook /etc/ansible/release_back.yml
+
+# DB
+db release:
+  tags:
+    - ci
+  stage: release
+  script:
+    - ansible-playbook /etc/ansible/release_db.yml
