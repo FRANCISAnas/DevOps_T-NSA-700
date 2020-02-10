@@ -11,13 +11,14 @@ front build:
   cache:
     paths:
       - frontend/node_modules/
+      - frontend/dist/
   script:
     - cd frontend
     - npm install --allow-root --unsafe-perm
     - npm run build
   artifacts:
     paths:
-      - frontent/dist/
+      - frontend/dist/
 
 front test:
   tags:
@@ -28,7 +29,9 @@ front test:
     policy: pull
     paths:
       - frontend/node_modules/
+      - frontend/dist/
   script:
+    - cd frontend
     - npm run test
 # Back
 #back build:
