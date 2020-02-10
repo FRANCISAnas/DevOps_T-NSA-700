@@ -153,4 +153,5 @@ sudo gitlab-runner restart
 
 To test if the mysql server is listening, run following command on db VM:
 sudo netstat -tulnp | grep mysql
+
 ```
