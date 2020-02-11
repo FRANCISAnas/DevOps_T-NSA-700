@@ -190,6 +190,18 @@ sudo netstat -tulnp | grep mysql
 
 ### Ansible
 
+#### Backend - setup and install
+
+![Ansible playbook and roles for setup and build of backend](readme_images/back_setup_and_install.PNG "Ansible playbook and roles for setup and build of backend")
+
+#### Frontend - setup and install
+
+![Ansible playbook and roles for setup and build of frontend](readme_images/front_setup_and_install.PNG "Ansible playbook and roles for setup and build of frontend")
+
+#### Database - setup and install
+
+![Ansible playbook and roles for setup and build of the database](readme_images/db_setup_and_install.PNG "Ansible playbook and roles for setup and build of the database")
+
 ### Gitlab pipeline - CI/CD
 
 #### Backend - install and build
