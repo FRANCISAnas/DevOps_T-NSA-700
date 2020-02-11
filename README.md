@@ -206,14 +206,14 @@ sudo netstat -tulnp | grep mysql
 
 #### Frontend - unit tests
 
-![Pipeline testing the front end](readme_images/front_tests.png "Pipeline testing the front end")
+![Pipeline testing the front end](readme_images/front_tests.PNG "Pipeline testing the front end")
 
 #### Frontend - deployment
 
-![Pipeline deploying the front end](readme_images/front_release.png "Pipeline deploying the front end")
+![Pipeline deploying the front end](readme_images/front_release.PNG "Pipeline deploying the front end")
 
 #### Frontend - deployment finished
 
-![Front end deployed](readme_images/pipelines_released.png "Front end deployed")
+![Front end deployed](readme_images/pipelines_released.PNG "Front end deployed")
 
 
