@@ -5,6 +5,8 @@ We also include in this repo a terraform project that deploys 4 VMs on the Micro
 
 The Gitlab VM must be set manually, the other ones will be automatically configured with Ansible. You just have to setup the ssh access to them from the Gitlab VM so that ansible can connect to it.  
 
+At the end of this readme, you can find some screenshots taken while setting up using ansible or building/testing/deploying using the Gitlab pipeline.
+
 
 ## Setup the VMs
 
@@ -183,3 +185,35 @@ To test if the mysql server is listening, run following command on db VM:
 ```
 sudo netstat -tulnp | grep mysql
 ```
+
+## Screenshots
+
+### Ansible
+
+### Gitlab pipeline - CI/CD
+
+#### Backend - install and build
+
+![Pipeline building and installing the back end](readme_images/back_install_and_build.png "Pipeline building and installing the back end")
+
+#### Backend - unit tests
+
+![Pipeline testing the back end](readme_images/back_tests.png "Pipeline testing the back end")
+
+#### Frontend - install and build
+
+![Pipeline building and installing the front end](readme_images/front_install_and_build.png "Pipeline building and installing the front end")
+
+#### Frontend - unit tests
+
+![Pipeline testing the front end](readme_images/front_tests.png "Pipeline testing the front end")
+
+#### Frontend - deployment
+
+![Pipeline deploying the front end](readme_images/front_release.png "Pipeline deploying the front end")
+
+#### Frontend - deployment finished
+
+![Front end deployed](readme_images/pipelines_released.png "Front end deployed")
+
+
