@@ -56,8 +56,8 @@ Semestre 7 *(premier semestre de M1)*
 * Deployment automatique du code sur les VMs
 
 # Equipe et répartition du travail
-**Nombre de commit total :** 96 
-**Chef de projet :** Haberkorn Jonas
+**Nombre de commit total :** 96  
+**Chef de projet :** Haberkorn Jonas  
 **Documentation réalisée par :** Haberkorn Jonas  
 **Diaporama de présentation réalisé par :** Haberkorn Jonas 
 
