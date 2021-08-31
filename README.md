@@ -14,7 +14,7 @@
   - [Projets en parallèle](#projets-en-parallèle)
 - [Fonctionnalités](#fonctionnalités)
 - [Equipe et répartition du travail](#equipe-et-répartition-du-travail)
-  - [Membres de l'équipe :](#membres-de-léquipe-)
+  - [Membres de l'équipe](#membres-de-léquipe)
 - [Notation](#notation)
 - [Axes d'amélioration](#axes-damélioration)
 - [Liens](#liens)
@@ -61,7 +61,7 @@ Semestre 7 *(premier semestre de M1)*
 **Documentation réalisée par :** Haberkorn Jonas  
 **Diaporama de présentation réalisé par :** Haberkorn Jonas 
 
-## Membres de l'équipe :
+## Membres de l'équipe
 * **Haberkorn Jonas**
   * Etudiant à : Strasbourg
   * Nombre de commits : 96
