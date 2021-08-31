@@ -1,6 +1,0 @@
----
-- name: add nodejs repo
-  shell: curl -sL https://deb.nodesource.com/setup_13.x | bash -
-- name: install nodejs
-  apt:
-    name: nodejs

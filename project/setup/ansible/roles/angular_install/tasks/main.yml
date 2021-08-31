@@ -1,0 +1,4 @@
+---
+# tasks file for /etc/ansible/roles/angular_install
+
+- import_tasks: install_angular.yml

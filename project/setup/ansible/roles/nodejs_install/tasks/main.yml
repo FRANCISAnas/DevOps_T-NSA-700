@@ -1,0 +1,5 @@
+---
+# tasks file for /etc/ansible/roles/nodejs_install
+
+- import_tasks: install_curl.yml
+- import_tasks: install_nodejs.yml

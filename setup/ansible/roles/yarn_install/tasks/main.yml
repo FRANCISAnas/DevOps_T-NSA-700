@@ -1,4 +1,0 @@
----
-# tasks file for /etc/ansible/roles/yarn_install
-
-- import_tasks: install_yarn.yml
